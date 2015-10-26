@@ -1,6 +1,6 @@
 {
   "name": "jorisw-phantomjs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Joris van der Wel <joris@jorisvanderwel.com>",
   "summary": "Install the phantomjs cli tool",
   "description": "Install the phantomjs cli tool",
