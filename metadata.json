@@ -1,0 +1,27 @@
+{
+  "name": "jorisw-phantomjs",
+  "version": "1.0.0",
+  "author": "Joris van der Wel <joris@jorisvanderwel.com>",
+  "summary": "Install the phantomjs cli tool",
+  "description": "Install the phantomjs cli tool",
+  "license": "MIT",
+  "source": "git://github.com/Joris-van-der-Wel/puppet-phantomjs.git",
+  "project_page": "https://github.com/Joris-van-der-Wel/puppet-phantomjs",
+  "issues_url": "https://github.com/Joris-van-der-Wel/puppet-phantomjs/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">=4.0.0 <5.0.0"
+    }
+  ],
+  "dependencies": [
+  ]
+}
