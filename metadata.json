@@ -23,5 +23,6 @@
     }
   ],
   "dependencies": [
+    {"name":"jfryman/selinux","version_requirement":">= 0.2.5 <3.0.0"}
   ]
 }

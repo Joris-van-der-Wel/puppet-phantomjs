@@ -1,0 +1,9 @@
+module phantomjs_httpd_cups 1.0;
+
+require {
+    type httpd_t;
+    type cupsd_rw_etc_t;
+    class file {getattr read open};
+};
+
+allow httpd_t cupsd_rw_etc_t:file {getattr read open};
