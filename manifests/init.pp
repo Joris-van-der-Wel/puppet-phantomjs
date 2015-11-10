@@ -16,11 +16,10 @@ class phantomjs::params {
 class phantomjs::install {
   $verifyDownload = "/bin/sha256sum -b '/root/${phantomjs::download_sha256sum}.tar.bz2' | /bin/grep '${phantomjs::download_sha256sum}'"
 
-  ensure_packages(['wget']) # stdlib
+  ensure_packages(['wget', 'tar', 'bzip2']) # stdlib
 
-  Package['wget']
-  ->
   exec { 'download phantomjs':
+    require => [ Package['wget'] ],
     command => "/bin/wget -O '/root/${phantomjs::download_sha256sum}.tar.bz2' '${phantomjs::download_url}' && ($verifyDownload) && /bin/rm -Rf '${phantomjs::install_dir}'",
     unless => "$verifyDownload",
     notify => Exec['extract phantomjs']
@@ -31,6 +30,7 @@ class phantomjs::install {
   }
   ->
   exec { 'extract phantomjs':
+    require => [ Package['tar'], Package['bzip2'] ],
     command => "/bin/tar -jxf '/root/${phantomjs::download_sha256sum}.tar.bz2' -C '${phantomjs::install_dir}' --strip-components=1",
     creates => "${phantomjs::install_dir}/bin",
   }
